@@ -1,0 +1,51 @@
+﻿@page "/game"
+
+<h3>Game</h3>
+
+
+@for (var i = 1; i <= Length; i++)
+{
+    var bni = i;
+
+    <div class="red">
+        @for (var j = 1; j <= Length; j++)
+        {
+            var bnj = j;
+            /*
+            <div class="empty-space"></div>*/
+            <button class="horizontal-line btn btn-dark @(HorMatrix[bni - 1, bnj -1] == 1 ? "disabled" : "")" @onclick="() => NaKojeVrijednostiDjelujeCrta(0, bni, bnj)"></button>
+
+        }
+    </div>
+
+    <div class="red">
+        @for (var k = 1; k <= Length + 1; k++)
+        {
+            var bnk = k;
+            <button class='vertical-line btn btn-dark @(VertMatrix[bni - 1, bnk -1] == 1 ? "disabled" : "")' @onclick="() => NaKojeVrijednostiDjelujeCrta(1, bni, bnk)"></button>
+            if (k != Length + 1)
+            {
+                <button class="polje btn">@PoljeMatrixString[bni - 1, bnk - 1]</button>
+            }
+        }
+    </div>
+
+    if (i == Length)
+    {
+        <div class="red">
+            @for (var j = 1; j <= Length; j++)
+            {
+                var bnj = j;
+                /*<div class="empty-space"></div>*/
+                <button class="horizontal-line btn btn-dark disabled" @onclick="() => NaKojeVrijednostiDjelujeCrta(0, bni + 1, bnj)"></button>
+            }
+        </div>
+    }
+}
+
+<br />
+<br />
+<br />
+<br />
+
+<h2>Igrač koji je na redu: @CurentPlayer</h2>

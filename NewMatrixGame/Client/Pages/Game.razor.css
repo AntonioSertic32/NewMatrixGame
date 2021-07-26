@@ -1,0 +1,80 @@
+﻿.horizontal-line {
+    width: 70px;
+    height: 30px;
+    margin-left: 30px;
+    position: relative;
+}
+
+    .horizontal-line:before {
+        content: '';
+        position: absolute;
+        top: -1px;
+        left: -14px;
+        border-top: 15px solid transparent;
+        border-right: 15px solid #343a40;
+        border-bottom: 15px solid transparent;
+    }
+
+    .horizontal-line:after {
+        content: '';
+        position: absolute;
+        top: -1px;
+        left: 67px;
+        border-top: 15px solid transparent;
+        border-left: 15px solid #343a40;
+        border-bottom: 15px solid transparent;
+    }
+
+.vertical-line {
+    width: 30px;
+    height: 70px;
+    position: relative;
+}
+
+    .vertical-line:before {
+        content: '';
+        position: absolute;
+        left: -1px;
+        top: -14px;
+        border-right: 15px solid transparent;
+        border-bottom: 15px solid #343a40;
+        border-left: 15px solid transparent;
+    }
+
+    .vertical-line:after {
+        content: '';
+        position: absolute;
+        left: -1px;
+        top: 67px;
+        border-right: 15px solid transparent;
+        border-top: 15px solid #343a40;
+        border-left: 15px solid transparent;
+    }
+
+.horizontal-line, .vertical-line {
+    opacity: .3 !important;
+}
+    .horizontal-line:hover, .vertical-line:hover {
+        opacity: .6 !important;
+    }
+
+.btn.disabled, .btn:disabled {
+    opacity: 1 !important;
+}
+
+.red {
+    display: flex;
+}
+
+.polje {
+    height: 70px;
+    width: 70px;
+}
+
+.btn-dark:hover {
+    background-color: #343a40 !important;
+    border-color: #343a40 !important;
+}
+.btn-dark.focus, .btn-dark:focus {
+    box-shadow: 0 0 0 0 !important;
+}
